@@ -1,0 +1,20 @@
+{
+  "background_color": "#2a080c",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "Flambeur !",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "short_name": "Flambeur !",
+  "start_url": "./",
+  "theme_color": "#f3ca65",
+  "id": "com.flambeur.game",
+  "description": "Un jeu de société de bluff, d'estimation et de connaissances insolites. Estime, surenchéris et flambe !",
+  "lang": "fr",
+  "categories": [
+    "education",
+    "entertainment",
+    "games",
+    "social"
+  ]
+}
