@@ -2,22 +2,18 @@
 <html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Flambeur !</title>
-<!-- PWA Manifest intégré en Data URI pour PWABuilder -->
-<link rel="manifest" href="data:application/manifest+json,{
-  %22name%22: %22Flambeur !%22,
-  %22short_name%22: %22Flambeur%22,
-  %22start_url%22: %22./%22,
-  %22display%22: %22standalone%22,
-  %22background_color%22: %22%232a080c%22,
-  %22theme_color%22: %22%232a080c%22,
-  %22icons%22: [
-    {
-      %22src%22: %22data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Ccircle cx='256' cy='256' r='240' fill='%23ff3b30'/%3E%3Ccircle cx='256' cy='256' r='200' fill='none' stroke='%23f3ca65' stroke-width='24' stroke-dasharray='40 30'/%3E%3Ccircle cx='256' cy='256' r='150' fill='%232a080c' stroke='%23f3ca65' stroke-width='12'/%3E%3C/svg%3E%22,
-      %22sizes%22: %22512x512%22,
-      %22type%22: %22image/svg+xml%22
-    }
-  ]
-}">
+<!-- Lien vers le manifeste PWA externe validé par PWABuilder -->
+<link rel="manifest" href="./manifest.json">
+<script>
+  // Enregistrement du Service Worker externe (sw.js)
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(reg => console.log('Service Worker enregistré !', reg))
+        .catch(err => console.log('Erreur Service Worker', err));
+    });
+  }
+</script>
 <style>
 :root{--bg:#2a080c;--fg:#fceee6;--mut:#d1a193;--card:#3d1217;--line:#5c232a;--acc:#ff3b30;--gold:#f3ca65;--on:#f3ca65;--onfg:#2a080c;--felt:#3d1217;--chip:#ff3b30;--star:#f3ca65;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -69,15 +65,6 @@ details{margin:10px 0}summary{cursor:pointer;font-weight:650;padding:6px 0;color
 .hero p{margin:0;color:var(--mut)}
 </style></head><body><main id="app"></main>
 <script>
-// Enregistrement automatique du Service Worker pour PWABuilder
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    const swCode = `self.addEventListener('fetch', (e) => { e.respondWith(fetch(e.request).catch(() => caches.match(e.request))); });`;
-    const blob = new Blob([swCode], { type: 'text/javascript' });
-    navigator.serviceWorker.register(URL.createObjectURL(blob)).catch(() => {});
-  });
-}
-
 const BASE=[
 {q:`Combien de tonnes de biscuits de la marque BN ont été produites en 2018 ?`,u:"tonnes",a:18700,s:"Wikipédia"},
 {q:`Combien y a-t-il environ de grains de riz dans un paquet d’1 kg ?`,u:"grains",a:15432,s:"Calcul à partir d’environ 65 mg par grain"},
@@ -301,7 +288,7 @@ document.addEventListener("click",e=>{const b=e.target.closest("[data-a]");if(!b
  else if(a==="reqacc"){CUS.push(REQ.splice(i,1)[0]);saveC();saveR()}
  else if(a==="reqrej"){REQ.splice(i,1);saveR()}
  else if(a==="qdel"){CUS.splice(i,1);saveC()}
- else if(a==="qexp")S.exp=JSON.stringify(CUS);
+ else if(a="qexp")S.exp=JSON.stringify(CUS);
  else if(a==="qimp")return qimp();
  else if(a==="bid")return bid();
  else if(a==="acc")S.modal={t:"acc"};
