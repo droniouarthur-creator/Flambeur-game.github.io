@@ -11,6 +11,18 @@
   "id": "com.flambeur.game",
   "description": "Un jeu de société de bluff, d'estimation et de connaissances insolites. Estime, surenchéris et flambe !",
   "lang": "fr",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
   "categories": [
     "education",
     "entertainment",
