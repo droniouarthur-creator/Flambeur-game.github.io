@@ -1,0 +1,113 @@
+{
+  "id": "base",
+  "title": "Pack de base",
+  "version": 1,
+  "questions": [
+    {
+      "id": "base-001",
+      "q": "Combien de tonnes de biscuits de la marque BN ont été produites en 2018 ?",
+      "u": "tonnes",
+      "a": 18700,
+      "s": "Wikipédia"
+    },
+    {
+      "id": "base-002",
+      "q": "Combien y a-t-il environ de grains de riz dans un paquet d’1 kg ?",
+      "u": "grains",
+      "a": 15432,
+      "s": "Calcul à partir d’environ 65 mg par grain"
+    },
+    {
+      "id": "base-003",
+      "q": "Combien de fenêtres ont été vendues en France métropolitaine en 2019 ?",
+      "u": "fenêtres",
+      "a": 10026000,
+      "s": "UFME, Union des fabricants de menuiserie extérieure"
+    },
+    {
+      "id": "base-004",
+      "q": "En combien d'heures un avion fait-il le tour de la Terre le long de l’équateur ?",
+      "u": "heures",
+      "a": 46,
+      "s": "Calcul : 40 075 ÷ 865 ≈ 46 h 20 min"
+    },
+    {
+      "id": "base-005",
+      "q": "Quel pourcentage des Français porte des lunettes ?",
+      "u": "%",
+      "a": 72,
+      "s": "Optique 2000"
+    },
+    {
+      "id": "base-006",
+      "q": "Combien de coureurs ont porté le maillot jaune du Tour de France depuis 1947 ?",
+      "u": "coureurs",
+      "a": 236,
+      "s": "Le Dico du Tour"
+    },
+    {
+      "id": "base-007",
+      "q": "Combien de fois Clash Royale a-t-il été téléchargé dans le monde depuis sa création en 2016 ?",
+      "u": "millions",
+      "a": 723,
+      "s": "Udonis"
+    },
+    {
+      "id": "base-008",
+      "q": "Combien de stylos BIC sont achetés par jour dans le monde en 2023 ?",
+      "u": "stylos",
+      "a": 273972,
+      "s": "Le Stylo Publicitaire"
+    },
+    {
+      "id": "base-009",
+      "q": "Quelle distance un stylo BIC peut-il écrire en continu ?",
+      "u": "mètres",
+      "a": 2000,
+      "s": "Le Stylo Publicitaire"
+    },
+    {
+      "id": "base-010",
+      "q": "Combien existe-t-il d’éléments chimiques ?",
+      "u": "éléments",
+      "a": 118,
+      "s": "IUPAC, tableau périodique"
+    },
+    {
+      "id": "base-011",
+      "q": "La plus forte rafale de vent hors tornade a été relevée en Australie en 1996. Quelle était sa vitesse ?",
+      "u": "km/h",
+      "a": 408,
+      "s": "Géoclimat"
+    },
+    {
+      "id": "base-012",
+      "q": "Quelle est la plus grande somme gagnée au Loto en France ?",
+      "u": "millions d’euros",
+      "a": 30,
+      "s": "Midi Libre",
+      "v": "Préciser « Loto » (et non Euromillions) dans la source"
+    },
+    {
+      "id": "base-013",
+      "q": "Combien de points LeBron James a-t-il marqués le 27 décembre 2015 contre Portland ?",
+      "u": "points",
+      "a": 12,
+      "s": "ESPN"
+    },
+    {
+      "id": "base-014",
+      "q": "Combien de litres d’eau faut-il pour fabriquer un jean ?",
+      "u": "litres",
+      "a": 7000,
+      "s": "Kamilou"
+    },
+    {
+      "id": "base-015",
+      "q": "Quelle est la population du Kirghizistan en 2026 ?",
+      "u": "habitants",
+      "a": 7437853,
+      "s": "Worldometer"
+    }
+  ]
+}
