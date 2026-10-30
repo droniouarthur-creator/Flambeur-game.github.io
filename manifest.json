@@ -4,11 +4,11 @@
   "display": "standalone",
   "name": "Flambeur !",
   "orientation": "portrait-primary",
-  "scope": "/",
+  "scope": "./",
   "short_name": "Flambeur !",
   "start_url": "./",
   "theme_color": "#f3ca65",
-  "id": "com.flambeur.game",
+  "id": "./",
   "description": "Un jeu de société de bluff, d'estimation et de connaissances insolites. Estime, surenchéris et flambe !",
   "lang": "fr",
   "icons": [
