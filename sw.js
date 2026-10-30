@@ -1,4 +1,4 @@
-const CACHE_NAME = 'flambeur-cache-v1';
+const CACHE_NAME = 'flambeur-cache-v2';
 const assetsToCache = [
   './',
   './index.html',
