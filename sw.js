@@ -1,43 +1,16 @@
-const CACHE_NAME = 'flambeur-cache-v2';
-const assetsToCache = [
-  './',
-  './index.html',
-  './manifest.json'
-];
-
-// Installation du cache
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(assetsToCache);
-    })
-  );
+const CACHE = 'flambeur-v2'; // à changer à chaque mise en ligne
+self.addEventListener('install', e => {
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(['./','./index.html','./manifest.json'])));
   self.skipWaiting();
 });
-
-// Activation et nettoyage des anciens caches
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys().then((keys) => {
-      return Promise.all(
-        keys.map((key) => {
-          if (key !== CACHE_NAME) {
-            return caches.delete(key);
-          }
-        })
-      );
-    })
-  );
+self.addEventListener('activate', e => {
+  e.waitUntil(caches.keys().then(k => Promise.all(k.filter(x => x !== CACHE).map(x => caches.delete(x)))));
   self.clients.claim();
 });
-
-// Interception des requêtes réseau
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      return cachedResponse || fetch(event.request).catch(() => {
-        // Optionnel : page de repli si hors-ligne total et non en cache
-      });
-    })
+self.addEventListener('fetch', e => {
+  if (e.request.method !== 'GET' || new URL(e.request.url).origin !== location.origin) return;
+  e.respondWith(
+    fetch(e.request).then(r => { const c = r.clone(); caches.open(CACHE).then(x => x.put(e.request, c)); return r; })
+      .catch(() => caches.match(e.request).then(r => r || caches.match('./index.html')))
   );
 });
