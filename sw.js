@@ -1,5 +1,5 @@
 // Change ce nom à chaque mise en ligne pour que les joueurs reçoivent la nouvelle version.
-const CACHE = 'flambeur-v5';
+const CACHE = 'flambeur-v6';
 const ASSETS = ['./', './index.html', './manifest.json', './questions.json'];
 
 self.addEventListener('install', (e) => {
