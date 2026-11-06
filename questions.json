@@ -108,6 +108,146 @@
       "u": "habitants",
       "a": 7437853,
       "s": "Worldometer"
-    }
+    },
+    {
+    "id": "base-016",
+    "q": "Quelle est la durée de vie moyenne d'un micocoulier occidental ?",
+    "u": "années",
+    "a": 80,
+    "s": "macampagne-jardinerie.fr"
+  },
+  {
+    "id": "base-017",
+    "q": "Quel est le record de pattes d'un mille-pattes ?",
+    "u": "pattes",
+    "a": 1306,
+    "s": "National Geographic"
+  },
+  {
+    "id": "base-018",
+    "q": "Le nom chimique complet de la titine est le mot le plus long au monde, combien de lettres a-t-il ?",
+    "u": "lettres",
+    "a": 189819,
+    "s": "altalingua.fr"
+  },
+  {
+    "id": "base-019",
+    "q": "Quel est le record du nombre de triple 20 consécutifs aux fléchettes ?",
+    "u": "triple 20",
+    "a": 24,
+    "s": "Co Stompé"
+  },
+    {
+    "id": "base-020",
+    "q": "Combien des 193 états dans le monde n’ont jamais eu de femme au pouvoir ?",
+    "u": "femmes",
+    "a": 130,
+    "s": "pewresearch.org"
+  },
+  {
+    "id": "base-021",
+    "q": "Nilanshi Patel a établi à 17 ans le record de la plus grande chevelure, de combien de centimètres ?",
+    "u": "centimètres",
+    "a": 190,
+    "s": ""
+  },
+  {
+    "id": "base-022",
+    "q": "Quel est le pourcentage des requêtes posées chaque jour à Google qui n’ont jamais été posées auparavant ?",
+    "u": "%",
+    "a": 18,
+    "s": "Google Inc."
+  },
+  {
+    "id": "base-023",
+    "q": "Combien de nouveaux livres paraissent chaque année en moyenne en France ?",
+    "u": "livres",
+    "a": 67278,
+    "s": "UNESCO"
+  },
+  {
+    "id": "base-024",
+    "q": "Combien de personnes sont considérées comme obèses en 2026 dans le monde ?",
+    "u": "personnes",
+    "a": 926122400,
+    "s": "worldometers"
+  },
+  {
+    "id": "base-025",
+    "q": "En 2026, combien d’années reste-t-il avant la fin du pétrole ?",
+    "u": "années",
+    "a": 56,
+    "s": "Worldometers"
+  },
+  {
+    "id": "base-026",
+    "q": "Combien de muscles sont nécessaires pour qu'un être humain puisse s'exprimer et parler ?",
+    "u": "muscles",
+    "a": 72,
+    "s": "littérature scientifique en anatomie et en orthophonie"
+  },
+  {
+    "id": "base-027",
+    "q": "Combien d’éclairs frappent la Terre chaque jour ?",
+    "u": "éclairs",
+    "a": 88000,
+    "s": "Planétoscope"
+  },
+  {
+    "id": "base-028",
+    "q": "En moyenne, combien de personnes finissent à l'hôpital chaque année à Paris après avoir glissé sur une crotte de chien ?",
+    "u": "personnes",
+    "a": 650,
+    "s": "CREDOC"
+  },
+  {
+    "id": "base-029",
+    "q": "Combien de cheveux perdons-nous chaque mois ?",
+    "u": "cheveux",
+    "a": 1500,
+    "s": "Ouest-France"
+  },
+  {
+    "id": "base-030",
+    "q": "Quelle est la proportion des Français qui se lavent les mains avec de l’eau et du savon après être allés aux toilettes ?",
+    "u": "%",
+    "a": 62,
+    "s": "intotheminds"
+  },
+  {
+    "id": "base-031",
+    "q": "Quelle est la proportion des Français ayant un niveau d’anglais suffisant pour tenir une conversation ?",
+    "u": "%",
+    "a": 39,
+    "s": "intotheminds"
+  },
+  {
+    "id": "base-032",
+    "q": "Quelle est la proportion des prisonniers étrangers détenus dans les prisons françaises ?",
+    "u": "%",
+    "a": 22,
+    "s": "intotheminds"
+  },
+  {
+    "id": "base-033",
+    "q": "Combien de litres de Coca-Cola consomme un français en moyenne chaque année ?",
+    "u": "L",
+    "a": 22,
+    "s": "intotheminds"
+  },
+  {
+    "id": "base-034",
+    "q": "Combien de litres de vin consomme un français en moyenne chaque année ?",
+    "u": "L",
+    "a": 51,
+    "s": "intotheminds"
+  },
+  {
+    "id": "base-035",
+    "q": "Combien de mois passons-nous aux toilettes dans notre vie ?",
+    "u": "mois",
+    "a": 36,
+    "s": "FemmeActuelle"
+  }
   ]
 }
