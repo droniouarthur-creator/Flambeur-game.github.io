@@ -183,11 +183,8 @@ ${S.showInstallModal ? `
     <button class="btn pri" style="width:100%; margin-top:4px;" data-a="close-install">Plus tard</button>
   </div>
 </div>
-` : ""}`
+` : ""}`;
 }
-</div>`:""}
-
-
 
 function suggestH(){
  const f=S.f;
@@ -200,7 +197,8 @@ function suggestH(){
 <label class="row"><input type="checkbox" id="nv" ${f.v?"checked":""}> Réponse à revérifier</label>
 <p class="err" role="alert">${esc(S.qerr)}</p>
 <button class="btn pri" style="width:100%;margin-top:10px" data-a="qreq">Envoyer la proposition</button></div>
-<button class="btn" style="width:100%;margin-top:10px" data-a="menu">Retour au menu</button>`}
+<button class="btn" style="width:100%;margin-top:10px" data-a="menu">Retour au menu</button>`;
+}
 
 function qsH(){
  const f=S.f;
@@ -212,7 +210,8 @@ ${CUS.length?`<div class="card"><h2>Questions personnalisées (${CUS.length})</h
 <div class="card"><h2>Sauvegarder ou partager</h2><p class="mut">Exporte tes questions pour les garder en sécurité ou les importer ailleurs.</p>
 <button class="btn" data-a="qexp">Exporter</button>${S.exp?`<textarea readonly rows="5" style="margin-top:8px" aria-label="Questions exportées">${esc(S.exp)}</textarea>`:""}
 <label for="imp">Importer</label><textarea id="imp" rows="3"></textarea><button class="btn" style="margin-top:8px" data-a="qimp">Importer</button></div>
-<button class="btn pri" data-a="menu" style="width:100%;margin-top:10px">Retour au menu</button>`}
+<button class="btn pri" data-a="menu" style="width:100%;margin-top:10px">Retour au menu</button>`;
+}
 
 function roundH(){
  const p=S.players[S.cur],L=last(),m=S.mode;
@@ -228,14 +227,16 @@ ${m==="fourchette"?`<div class="row" style="margin-top:8px"><input type="number"
 <p class="err" role="alert">${esc(S.err)}</p>
 <div class="row"><button class="btn pri grow" data-a="bid">Surenchérir</button><button class="btn red grow" data-a="acc" ${L===null?"disabled":""}>Flambeur !</button></div>
 <div class="row" style="margin-top:10px"><button class="btn" data-a="jk">Mes jokers (${p.jk.length})</button>${m?`<button class="btn" data-a="nomode">Annuler le joker</button>`:""}</div>
-${S.showJk?`<p class="up">Tiens le téléphone pour que personne ne voie ton écran.</p>${p.jk.length?"":"<p class=mut>Plus de joker.</p>"}${avail.map(k=>`<div class="jk"><b>${JK[k][0]}</b><p>${JK[k][1]}</p>${k==="jackpot"?`<span class="mut">Se joue au moment de crier « Flambeur ! ».</span>`:`<button class="btn pri" data-a="play" data-k="${k}" ${(k==="miroir"||k==="inflation")&&L===null?"disabled":""}>Jouer</button>`}</div>`).join("")}${ban.map(k=>`<div class="jk mut">${JK[k][0]} — interdit pour cette manche</div>`).join("")}`:""}</div>`+modalH()}
+${S.showJk?`<p class="up">Tiens le téléphone pour que personne ne voie ton écran.</p>${p.jk.length?"":"<p class=mut>Plus de joker.</p>"}${avail.map(k=>`<div class="jk"><b>${JK[k][0]}</b><p>${JK[k][1]}</p>${k==="jackpot"?`<span class="mut">Se joue au moment de crier « Flambeur ! ».</span>`:`<button class="btn pri" data-a="play" data-k="${k}" ${(k==="miroir"||k==="inflation")&&L===null?"disabled":""}>Jouer</button>`}</div>`).join("")}${ban.map(k=>`<div class="jk mut">${JK[k][0]} — interdit pour cette manche</div>`).join("")}`:""}</div>`+modalH();
+}
 
 function modalH(){
  const M=S.modal;if(!M)return"";let h="";
  if(M.t==="acc"){h=`<h2>Qui crie « Flambeur ! » ?</h2><p class="mut">Accusé : ${esc(S.players[S.last].name)}</p>`+S.players.map((p,i)=>i===S.last?"":`<button class="btn" data-a="res" data-i="${i}" data-j="0">${esc(p.name)}</button>${p.jk.includes("jackpot")&&!(S.banned[i]||[]).includes("jackpot")?`<button class="btn" data-a="res" data-i="${i}" data-j="1">${esc(p.name)} avec le Jackpot (points ×2)</button>`:""}`).join("")}
  else if(M.t==="rg"&&M.op==null){h=`<h2>Regarder les jokers de qui ?</h2>`+S.players.map((p,i)=>i===S.cur?"":`<button class="btn" data-a="rgop" data-i="${i}">${esc(p.name)}</button>`).join("")}
  else if(M.t==="rg"){const o=S.players[M.op];h=`<h2>Jokers de ${esc(o.name)}</h2>${o.jk.length?"<p>Interdis-lui un joker pour cette manche, ou aucun.</p>":"<p>Aucun joker.</p>"}`+o.jk.map(k=>`<button class="btn red" data-a="ban" data-k="${k}">Interdire ${JK[k][0]}</button>`).join("")+`<button class="btn" data-a="ban" data-k="">Ne rien interdire</button>`}
- return `<div class="modal" role="dialog" aria-modal="true"><div>${h}<button class="btn" data-a="close" style="margin-top:12px">Fermer</button></div></div>`}
+ return `<div class="modal" role="dialog" aria-modal="true"><div>${h}<button class="btn" data-a="close" style="margin-top:12px">Fermer</button></div></div>`;
+}
 
 function resolve(ai,jp){
  const cu=S.players[S.last],bid=last(),ans=S.q.a,k=jp?2:1,d=S.players.map(()=>0);let txt,lo;
@@ -245,7 +246,7 @@ function resolve(ai,jp){
  if(jp){const a=S.players[ai].jk.indexOf("jackpot");S.players[ai].jk.splice(a,1)}
  S.players.forEach((p,i)=>p.pts+=d[i]);
  const top=Math.max(...S.players.map(p=>p.pts));S.winner=top>=5?S.players.findIndex(p=>p.pts===top):null;
- S.res={txt,d,lo,bid,jp};S.start=lo;S.modal=null;S.screen="reveal";render()
+ S.res={txt,d,lo,bid,jp};S.start=lo;S.modal=null;S.screen="reveal";render();
 }
 
 function revealH(){
@@ -254,11 +255,13 @@ function revealH(){
 ${q.v?`<div class="ban"><b>À revérifier.</b> ${q.v===true?"Réponse à confirmer avant de s’y fier.":esc(q.v)}</div>`:""}
 <div class="card"><p>Dernière mise : <b>${fmt(r.bid)}</b></p><p><b>${r.txt}</b>${r.jp?" Jackpot : points doublés.":""}</p><p>${S.players.map((p,i)=>r.d[i]?`${esc(p.name)} ${r.d[i]>0?"+":""}${r.d[i]}`:"").filter(Boolean).join(" · ")}</p>
 ${q.e?`<div class="ban"><b>Carte à effet.</b> ${esc(S.players[r.lo].name)} ${esc(q.e)}.</div>`:""}</div>
-<button class="btn pri" style="width:100%" data-a="${S.winner!=null?"end":"next"}">${S.winner!=null?"Voir le vainqueur":"Manche suivante — "+esc(S.players[S.start].name)+" commence"}</button>`}
+<button class="btn pri" style="width:100%" data-a="${S.winner!=null?"end":"next"}">${S.winner!=null?"Voir le vainqueur":"Manche suivante — "+esc(S.players[S.start].name)+" commence"}</button>`;
+}
 
 function endH(){
  const w=S.players[S.winner],r=S.players.slice().sort((a,b)=>b.pts-a.pts);
- return `<h1>${esc(w.name)} gagne !</h1><p class="mut" style="text-align:center">Premier à 5 points.</p><div class="card">${r.map(p=>`<div class="row" style="justify-content:space-between"><span>${esc(p.name)}</span><b>${p.pts}</b></div>`).join("")}</div><div class="row"><button class="btn pri grow" data-a="again">Rejouer</button><button class="btn grow" data-a="menu">Menu</button></div>`}
+ return `<h1>${esc(w.name)} gagne !</h1><p class="mut" style="text-align:center">Premier à 5 points.</p><div class="card">${r.map(p=>`<div class="row" style="justify-content:space-between"><span>${esc(p.name)}</span><b>${p.pts}</b></div>`).join("")}</div><div class="row"><button class="btn pri grow" data-a="again">Rejouer</button><button class="btn grow" data-a="menu">Menu</button></div>`;
+}
 
 function render(){
  const keep=["#bid","#lo","#hi"].map(x=>[x,($(x)||{}).value]);
@@ -281,52 +284,52 @@ function bid(){
  if(!e&&S.range&&(v<S.range.lo||v>S.range.hi))e=`Reste dans la fourchette imposée : ${fmt(S.range.lo)} à ${fmt(S.range.hi)}.`;
  if(!e&&m==="fourchette"){const lo=parseInt($("#lo").value,10),hi=parseInt($("#hi").value,10);
   if(!(lo>=minRaise(v)))e=`La fourchette doit commencer à ${fmt(minRaise(v))} ou plus.`;else if(!(hi>=lo))e="La fin de fourchette doit être au moins égale au début.";else nr={lo,hi}}
- if(e){S.err=e;render();return}
+ if(e){S.err=e;render();return;}
  if(m)p.jk.splice(p.jk.indexOf(m),1);
- S.bids.push({n:p.name,v});S.last=S.cur;S.range=nr;S.cur=(S.cur+1)%S.players.length;S.mode=null;S.showJk=false;S.err="";["#bid","#lo","#hi"].forEach(x=>{const el=$(x);if(el)el.value=""});render()
+ S.bids.push({n:p.name,v});S.last=S.cur;S.range=nr;S.cur=(S.cur+1)%S.players.length;S.mode=null;S.showJk=false;S.err="";["#bid","#lo","#hi"].forEach(x=>{const el=$(x);if(el)el.value=""});render();
 }
 
-function readF(){const g=i=>($(i)||{}).value||"";S.f={q:g("#nq"),u:g("#nu"),a:g("#na"),s:g("#ns"),e:g("#ne"),v:$("#nv")&&$("#nv").checked}}
+function readF(){const g=i=>($(i)||{}).value||"";S.f={q:g("#nq"),u:g("#nu"),a:g("#na"),s:g("#ns"),e:g("#ne"),v:$("#nv")&&$("#nv".checked)};}
 
 function qreq(){
  readF();const f=S.f,a=parseInt(f.a,10);
  if(!f.q.trim()||!f.u.trim())S.qerr="Renseigne la question et l’unité.";
  else if(!(a>=1))S.qerr="La réponse doit être un entier à partir de 1.";
- else{const o={q:f.q.trim(),u:f.u.trim(),a,s:f.s.trim()};if(f.e.trim())o.e=f.e.trim();if(f.v)o.v=true;REQ.push(o);saveR();S.f={};S.qerr="";toast("Proposition enregistrée sur cet appareil. L’envoi au modérateur arrivera avec les comptes.");S.screen="setup";render()}
+ else{const o={q:f.q.trim(),u:f.u.trim(),a,s:f.s.trim()};if(f.e.trim())o.e=f.e.trim();if(f.v)o.v=true;REQ.push(o);saveR();S.f={};S.qerr="";toast("Proposition enregistrée sur cet appareil. L’envoi au modérateur arrivera avec les comptes.");S.screen="setup";render();}
 }
 
 function qimp(){
- let t;try{t=JSON.parse($("#imp").value)}catch(e){S.qerr="Texte illisible : colle exactement le texte exporté.";return render()}
- if(!Array.isArray(t)){S.qerr="Le texte doit être une liste de questions.";return render()}
+ let t;try{t=JSON.parse($("#imp").value)}catch(e){S.qerr="Texte illisible : colle exactement le texte exporté.";return render();}
+ if(!Array.isArray(t)){S.qerr="Le texte doit être une liste de questions.";return render();}
  const ok=t.filter(c=>c&&typeof c.q==="string"&&typeof c.u==="string"&&Number.isInteger(c.a)&&c.a>=1);
- CUS=CUS.concat(ok);saveC();S.qerr=ok.length+" question(s) importée(s)";render()
+ CUS=CUS.concat(ok);saveC();S.qerr=ok.length+" question(s) importée(s)";render();
 }
 
 const minRaise=n=>{const l=String(n).length;return l<2?n+1:n+Math.pow(10,l-2)},
-      shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a},
+      shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a;},
       sig=n=>String(n).split("").sort().join(""),
       $=s=>document.querySelector(s),
       fmt=n=>Number(n).toLocaleString("fr-FR"),
       esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
-function toast(m){const t=document.createElement("div");t.textContent=m;t.setAttribute("role","status");t.style.cssText="position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));max-width:488px;margin:auto;background:var(--gold);color:var(--bg);padding:12px 16px;border-radius:12px;font-weight:650;z-index:30";document.body.appendChild(t);setTimeout(()=>t.remove(),3500)}
-document.addEventListener("keydown",e=>{if(e.key==="Escape"&&S.modal){S.modal=null;render()}});
+function toast(m){const t=document.createElement("div");t.textContent=m;t.setAttribute("role","status");t.style.cssText="position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));max-width:488px;margin:auto;background:var(--gold);color:var(--bg);padding:12px 16px;border-radius:12px;font-weight:650;z-index:30";document.body.appendChild(t);setTimeout(()=>t.remove(),3500);}
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&S.modal){S.modal=null;render();}});
 window.addEventListener("hashchange",render);
-document.addEventListener("input",e=>{const i=e.target.dataset.n;if(i!=null)S.names[i]=e.target.value});
+document.addEventListener("input",e=>{const i=e.target.dataset.n;if(i!=null)S.names[i]=e.target.value;});
 document.addEventListener("click",e=>{const b=e.target.closest("[data-a]");if(!b)return;const a=b.dataset.a,i=+b.dataset.i;
  if(a==="add")S.names.push("Joueur "+(S.names.length+1));
  else if(a==="del")S.names.splice(i,1);
  else if(a==="go")return start();
- else if(a==="open-sug"){S.screen="suggest";S.qerr=""}
- else if(a==="close-install") { S.showInstallModal = false; render(); }
+ else if(a==="open-sug"){S.screen="suggest";S.qerr="";}
+ else if(a==="close-install"){S.showInstallModal=false;render();}
  else if(a==="dev-login"){const pin=($("#pin-code")||{}).value;if(pin==="41210"){S.devMode=true;render();}else{toast("Code PIN incorrect");}}
  else if(a==="dev-logout"){S.devMode=false;render();}
- else if(a==="qs"){S.screen="qs";S.qerr="";S.exp=""}
+ else if(a==="qs"){S.screen="qs";S.qerr="";S.exp="";}
  else if(a==="qreq")return qreq();
- else if(a==="reqacc"){CUS.push(REQ.splice(i,1)[0]);saveC();saveR()}
- else if(a==="reqrej"){REQ.splice(i,1);saveR()}
- else if(a==="qdel"){CUS.splice(i,1);saveC()}
-else if(a==="qexp"){
+ else if(a==="reqacc"){CUS.push(REQ.splice(i,1)[0]);saveC();saveR();}
+ else if(a==="reqrej"){REQ.splice(i,1);saveR();}
+ else if(a==="qdel"){CUS.splice(i,1);saveC();}
+ else if(a==="qexp"){
    const formatted = CUS.map((item, idx) => ({
      id: item.id || ("custom-" + (idx + 1)),
      q: item.q || "",
@@ -342,14 +345,15 @@ else if(a==="qexp"){
  else if(a==="res")return resolve(i,b.dataset.j==="1");
  else if(a==="jk")S.showJk=!S.showJk;
  else if(a==="nomode")S.mode=null;
- else if(a==="play"){const k=b.dataset.k;if(k==="regard")S.modal={t:"rg",op:null};else S.mode=k;S.err=""}
+ else if(a==="play"){const k=b.dataset.k;if(k==="regard")S.modal={t:"rg",op:null};else S.mode=k;S.err="";}
  else if(a==="rgop")S.modal={t:"rg",op:i};
- else if(a==="ban"){const p=S.players[S.cur],k=b.dataset.k,o=S.modal.op;p.jk.splice(p.jk.indexOf("regard"),1);if(k)(S.banned[o]=S.banned[o]||[]).push(k);S.modal=null}
+ else if(a==="ban"){const p=S.players[S.cur],k=b.dataset.k,o=S.modal.op;p.jk.splice(p.jk.indexOf("regard"),1);if(k)(S.banned[o]=S.banned[o]||[]).push(k);S.modal=null;}
  else if(a==="close")S.modal=null;
  else if(a==="next")return round();
  else if(a==="end")S.screen="end";
  else if(a==="again")return start();
  else if(a==="menu")S.screen="setup";
- render()});
+ render();
+});
 render();
 </script></body></html>
