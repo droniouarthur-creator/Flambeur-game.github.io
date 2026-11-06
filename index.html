@@ -95,7 +95,7 @@ fourchette:["La Fourchette Forcée","Après ta mise, impose au joueur suivant un
 jackpot:["Le Jackpot","Joué en criant « Flambeur ! » : tous les points de la manche sont doublés."],
 inflation:["L’Inflation de crise","Pas de mise minimale ce tour : tu peux annoncer le même nombre ou à peine plus."]};
 
-let CUS=[],REQ=[],S={screen:"setup",names:["Joueur 1","Joueur 2"],err:"",modal:null,mode:null,showJk:false,f:{},qerr:"",exp:"",devMode:false,showInstallModal:true};
+let CUS=[],REQ=[],S={screen:"setup",names:["Joueur 1","Joueur 2"],err:"",modal:null,mode:null,showJk:false,f:{},qerr:"",exp:"",devMode:false,showInstallModal: !window.matchMedia('(display-mode: standalone)').matches};
   
 try{
  const t=JSON.parse(localStorage.getItem("fl_names")||"null");if(Array.isArray(t)&&t.length>=3)S.names=t.slice(0,10);
@@ -321,7 +321,10 @@ document.addEventListener("click",e=>{const b=e.target.closest("[data-a]");if(!b
  else if(a==="del")S.names.splice(i,1);
  else if(a==="go")return start();
  else if(a==="open-sug"){S.screen="suggest";S.qerr="";}
- else if(a==="close-install"){S.showInstallModal=false;render();}
+ else if(a==="close-install"){
+   S.showInstallModal = false;
+   render();
+ }
  else if(a==="dev-login"){const pin=($("#pin-code")||{}).value;if(pin==="41210"){S.devMode=true;render();}else{toast("Code PIN incorrect");}}
  else if(a==="dev-logout"){S.devMode=false;render();}
  else if(a==="qs"){S.screen="qs";S.qerr="";S.exp="";}
