@@ -123,9 +123,33 @@ const sb=()=>`<div class="sb">${S.players.map((p,i)=>`<div class="chip ${S.scree
 
 function setupH(){
  return `<div class="hero">${LOGO}<h1>${esc(NAME)}</h1><p>Estime, surenchéris, flambe. Un seul téléphone, 2 à 15 joueurs, premier à 5 points.</p></div>
+
+<details class="card"><summary>Règles en bref</summary>
+<p>Une question à réponse numérique est lue à voix haute. Le premier joueur annonce un nombre, puis chacun surenchérit ou crie « Flambeur ! » si la mise devient aberrante</p>
+<p><b>Mise minimale :</b> ajoute 1 au deuxième chiffre (42 → 43, 353 → 363, 990 → 1 000). Si t'es joueur, monte plus haut !</p>
+<p><b>Flambeur !</b> L’accusé est le dernier à avoir misé. Si sa mise dépasse la réponse, l’accusateur gagne 1 point et l’accusé en perd 1. Sinon (égalité comprise), l’accusé gagne 1 point et l’accusateur en perd 1. Mise exacte : l’accusé gagne 2 points.</p>
+<p>Le perdant de la manche commence la suivante. Chaque joueur a 2 jokers secrets au départ, jouables une fois.</p></details>
+
 <div class="card"><h2>Joueurs</h2>${S.names.map((n,i)=>`<div class="row" style="margin:6px 0"><input type="text" class="grow" data-n="${i}" value="${esc(n)}" aria-label="Nom du joueur ${i+1}" maxlength="16">${S.names.length>2?`<button class="btn" data-a="del" data-i="${i}" aria-label="Retirer ${esc(n)}">Retirer</button>`:""}</div>`).join("")}
 <div class="row" style="margin-top:10px">${S.names.length<15?`<button class="btn" data-a="add">Ajouter un joueur</button>`:""}<button class="btn pri" data-a="go" ${all().length?"":"disabled"}>Lancer la partie</button>${LOADERR?`<p class="err" role="alert" style="width:100%">${LOADERR}</p>`:""}</div></div>
 
+${location.hash==="#admin"||S.devMode?`<div class="card" style="border-style: dashed;">
+  <h2>Espace Modérateur</h2>
+  ${S.devMode ? 
+    `<p style="color:var(--gold);font-weight:bold;">Mode Développeur Actif ✅</p>
+     <button class="btn pri" style="width:100%" data-a="qs">Gérer les questions (${all().length} actives, ${REQ.length} en attente)</button>
+     <button class="btn red" style="width:100%;margin-top:8px" data-a="dev-logout">Verrouiller le mode dev</button>` :
+    `<p class="mut">Réservé au modérateur pour accepter les requêtes et modifier les questions (Code PIN requis).</p>
+     <label for="pin-code">Entrer le code PIN</label>
+     <div class="row"><input type="password" id="pin-code" inputmode="numeric" maxlength="5" class="grow"><button class="btn pri" data-a="dev-login">Déverrouiller</button></div>`
+  }
+</div>`:""}
+
+<div class="card">
+  <h2>Suggérer une question</h2>
+  <p class="mut">Tu es joueur ? Propose une question pour enrichir le jeu ! Elle sera soumise au modérateur.</p>
+  <button class="btn" style="width:100%" data-a="open-sug">Proposer une question</button>
+</div>`}`
 ${location.hash==="#admin"||S.devMode?`<div class="card" style="border-style: dashed;">
   <h2>Espace Modérateur</h2>
   ${S.devMode ? 
