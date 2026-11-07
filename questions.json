@@ -248,6 +248,76 @@
     "u": "mois",
     "a": 36,
     "s": "FemmeActuelle"
+  },
+  {
+    "id": "base-036",
+    "q": "Combien de Big Mac sont vendus chaque année aux Etats Unis ?",
+    "u": "Big Macs",
+    "a": 550000000,
+    "s": "Planétoscope"
+  },
+  {
+    "id": "base-037",
+    "q": "Combien de clients environ se rendent au McDonald’s dans le monde en une année ?",
+    "u": "clients",
+    "a": 22000000000,
+    "s": "Planétoscope"
+  },
+  {
+    "id": "base-038",
+    "q": "Entre 2024 et 2025, combien de personnes sont nées en Nouvelle-Zélande ?",
+    "u": "personnes",
+    "a": 58539,
+    "s": "Stats nz"
+  },
+  {
+    "id": "base-039",
+    "q": "Combien y a t-il de mots dans le tome 3 d’Harry Potter (le prisonnier d’Azkaban) dans sa langue originale ?",
+    "u": "mots",
+    "a": 107253,
+    "s": "word count"
+  },
+  {
+    "id": "base-040",
+    "q": "Combien de temps a duré le tournage de Star Wars 7 ?",
+    "u": "semaines",
+    "a": 25,
+    "s": "Star Wars Universe"
+  },
+  {
+    "id": "base-041",
+    "q": "Combien de kg de cannabis Snoop Dogg consomme-t-il par an ?",
+    "u": "kg",
+    "a": 36,
+    "s": "greenboyz"
+  },
+  {
+    "id": "base-042",
+    "q": "Combien Daniel Radcliffe (Harry Potter) a t il cassé de baguettes magiques sur le tournage d’HP ?",
+    "u": "baguettes",
+    "a": 80,
+    "s": "Youtube"
+  },
+  {
+    "id": "base-043",
+    "q": "Combien de prénoms Édouard Philippe a t il ?",
+    "u": "prénoms",
+    "a": 2,
+    "s": "Wikipédia"
+  },
+  {
+    "id": "base-044",
+    "q": "Quel âge a le créateur de Pokémon",
+    "u": "ans",
+    "a": 61,
+    "s": "Wikipédia"
+  },
+  {
+    "id": "base-045",
+    "q": "Combien coûte 1 mètre carré de soie brute en rouleau en Turquie ?",
+    "u": "€",
+    "a": 21,
+    "s": "UR Silk"
   }
   ]
 }
